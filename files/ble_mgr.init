@@ -1,0 +1,15 @@
+#!/bin/sh /etc/rc.common
+
+SERVICE_USE_PID=1
+START=118
+. /tigercel/scripts/common_functions.sh
+
+start()
+{
+    start_bg_app /bin/ble_mgr -x
+}
+
+stop()
+{
+    killall ble_mgr
+}

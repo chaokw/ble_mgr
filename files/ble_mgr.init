@@ -1,6 +1,6 @@
 #!/bin/sh /etc/rc.common
 
-SERVICE_USE_PID=1
+ERVICE_USE_PID=1
 START=118
 . /tigercel/scripts/common_functions.sh
 

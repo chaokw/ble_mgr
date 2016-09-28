@@ -4,7 +4,6 @@
 # This is free software, licensed under the GNU General Public License v2.
 # See /LICENSE for more information.
 #
-
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=ble_mgr
@@ -22,7 +21,7 @@ define Package/ble_mgr
 endef
 
 define Package/ble_mgr/description
- This package help to manage router using ble.
+ This package help to manage tigercel AP router via ble.
 endef
 
 define Build/Prepare

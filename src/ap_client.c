@@ -309,5 +309,5 @@ int assoc_loop(char *ifname, char *staname, char *essid, char *pass)   //chaokw
 	}
 
 	printf("ap client associate time out\r\n");
-	return 1;   //chaokw
+	return 1;
 }

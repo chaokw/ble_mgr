@@ -27,7 +27,7 @@
 
 survey_table site[64];
 int survey_count = 0;
-static unsigned char timeout_indicate = 0;  //chaokw
+static unsigned char timeout_indicate = 0;
 #define lengthof(x) (sizeof(x) / sizeof(x[0]))
 #define RTPRIV_IOCTL_SET (SIOCIWFIRSTPRIV + 0x02)
 #define RTPRIV_IOCTL_GSITESURVEY (SIOCIWFIRSTPRIV + 0x0D)
@@ -185,14 +185,14 @@ static void wifi_repeater_start(const char *ifname, const char *staname, const c
 		iwpriv(staname, "ApCliWPAPSK", key);
 	}
 
-       system("uci set dhcp.lan.ignore=1");   //chaokw 
+       system("uci set dhcp.lan.ignore=1");
        system("ubus call network.interface.lan down");
        system("ubus call network.interface.lan up");
 	
 	iwpriv(staname, "ApCliEnable", "1");
 
 	memset(buf, 0, 100);
-	snprintf(buf, lengthof(buf) - 1, "brctl addif br-lan '%s'", staname);  //chaokw
+	snprintf(buf, lengthof(buf) - 1, "brctl addif br-lan '%s'", staname);
 	system(buf);	
 }
 
@@ -231,7 +231,7 @@ void assoc_timeout(union sigval v)
 /***********************************************************************
 * main assoc loop to do repeater
 ************************************************************************/
-int assoc_loop(char *ifname, char *staname, char *essid, char *pass)   //chaokw  
+int assoc_loop(char *ifname, char *staname, char *essid, char *pass)
 {
 	static int try_count = 0;
 	static int assoc_count = 0;
@@ -271,7 +271,7 @@ int assoc_loop(char *ifname, char *staname, char *essid, char *pass)   //chaokw
 	
 	while (1) {
 
-		/*  if timer time out , just beak the loop and return error */    //chaokw
+		/*  if timer time out , just beak the loop and return error */
 		//printf("assoc_count=%d, try_count=%d", assoc_count, try_count);
 		
               if (timeout_indicate == 1){

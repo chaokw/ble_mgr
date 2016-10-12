@@ -266,7 +266,7 @@ static void localShutdown ( UNUSED_ARG int sig )
     gpBLEMgmtTaskCtx->running = FALSE;
     MsgQPendCancel(&gpBLEMgmtTaskCtx->msgq); 
 	
-    exit(0);  //chaokw
+    exit(0);
 }
 
 
@@ -288,12 +288,12 @@ S32 main(S32 argc, char *argv[])
     pthread_t   BLEProcThreadCtx;
 
     /* Set up signal handlers for catching ctrl-c */
-#if 1   //chaokw
+#if 1
     signal(SIGTERM, localShutdown);
     signal(SIGQUIT, localShutdown);
     signal(SIGINT,  localShutdown);
     signal(SIGPIPE, SIG_IGN);
-    //signal(SIGSEGV, SegvHandler);     //chaokw  add 20150813
+    //signal(SIGSEGV, SegvHandler);     //chaokw
     /* to have a backtrace incase assert trigger a SIGABRT    glic  eglic support ? */	
     //signal(SIGABRT, SegvHandler);  
 #endif

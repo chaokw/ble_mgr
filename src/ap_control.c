@@ -120,7 +120,7 @@ void return_device_id(void)
         printf("\r\n------L2_Send_Content  to be send------\r\n");
 	 int i;
         for(i=0; i<sendContent.length; i++) {	
-	     printf("0x%x ", sendContent.content[i]);  //chaokw
+	     printf("0x%x ", sendContent.content[i]);
         }
         printf("\r\n------------------------------------\r\n");
 #endif

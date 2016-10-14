@@ -245,7 +245,7 @@ static void response_package_handle(uint16_t sequence_id,uint8_t crc_check)
 /****************************************************************************
 * new_task_type shows where call this function
 *****************************************************************************/
-void uart_send(void * para,uint16_t event_size,SEND_TASK_TYPE_T new_task_type)   //chaokw  
+void uart_send(void * para,uint16_t event_size,SEND_TASK_TYPE_T new_task_type)
 {
 
     ASSERT(para != NULL);

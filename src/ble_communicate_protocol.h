@@ -145,7 +145,7 @@ typedef struct
 L2DataHeader_t;
 
 
-/* Command ID */   //chaokw
+/* Command ID */
 typedef enum {
     SET_AP_CLIENT_CMD_ID = 0x01,
     RSP_AP_CLIENT_CMD_ID = 0x05,		

@@ -129,8 +129,6 @@ static void register_wait_response(L1_Send_Content * content)
     current_package_wait_response = content;
 }
 
-
-
 /**********************************************************************
 * Whole package resend
 ***********************************************************************/
@@ -282,7 +280,7 @@ LABEL_SEND_ACK:
         printf("\r\n------------ack to be send-----------\r\n");
 	 int i;
         for(i=0; i<sendLen; i++) {	
-	     printf("0x%x ", currentSendPointer[i]);  //chaokw
+	     printf("0x%x ", currentSendPointer[i]);
         }
         printf("\r\n-------------------------------------\r\n");
 	     

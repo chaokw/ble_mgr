@@ -139,12 +139,12 @@ static uint32_t L1_resend_package(L1_Send_Content * content)
     if(!content) {
         return BLE_INVALIDDATA;
     }
-    /*fill header*/
+    //fill header
     global_L1_header_buffer[L1_HEADER_MAGIC_POS] = L1_HEADER_MAGIC;
     global_L1_header_buffer[L1_HEADER_PROTOCOL_VERSION_POS] = L1_HEADER_VERSION;
     global_L1_header_buffer[L1_PAYLOAD_LENGTH_HIGH_BYTE_POS] = (content->length >> 8 & 0xFF);
     global_L1_header_buffer[L1_PAYLOAD_LENGTH_LOW_BYTE_POS] = (content->length & 0xFF);
-    /*cal crc*/
+    //cal crc
     uint16_t crc16_ret = ble_crc16(0,content->content,content->length);
     global_L1_header_buffer[L1_HEADER_CRC16_HIGH_BYTE_POS] = ( crc16_ret >> 8) & 0xff;
     global_L1_header_buffer[L1_HEADER_CRC16_LOW_BYTE_POS] = crc16_ret & 0xff;

@@ -13,7 +13,6 @@
 #include <sys/time.h>
 #include <time.h>
 
-
 /* --- project includes ---*/
 #include "msgq.h"
 #include "ble_mgr.h"
@@ -34,8 +33,6 @@ BLEMgmtTaskCtxT  gBLEMgmtTaskCtx;
  *********************************************************/
 BLEMgmtTaskCtxT  *gpBLEMgmtTaskCtx = NULL;
 
-
-
  /*****************************************************************************
 * Name:Usage
 * Description:Prints out switch usage information.
@@ -55,8 +52,6 @@ static void Usage(const char *progName)
     printf("  -b<57600|115200>   Set uart baud rate\n");
     return;
 }
-
-
 
  /*****************************************************************************
 * Name:ProcessCmdlineOptions
@@ -127,8 +122,6 @@ static void ProcessCmdlineOptions(S32 argc, char *argv[])
     }
     return;
 }
-
-
 
  /*****************************************************************************
 * Name:TaskCtxInit
@@ -345,4 +338,3 @@ S32 main(S32 argc, char *argv[])
 }	
 
 #endif
- 

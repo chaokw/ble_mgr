@@ -129,6 +129,7 @@ static void register_wait_response(L1_Send_Content * content)
     current_package_wait_response = content;
 }
 
+
 /**********************************************************************
 * Whole package resend
 ***********************************************************************/
@@ -388,7 +389,7 @@ SEND_DATA_LABLE:
                         //begin to wait package response
                         register_wait_response(content);
                         //start timer wait for response
-                        start_resend_timer();  //chaokw
+                        start_resend_timer();
                         if((next_task_type == TASK_ACK) && (g_ack_package_buffer.isUsed == 1)) {
                             current_task_type = TASK_ACK;
                             next_task_type = TASK_NONE;

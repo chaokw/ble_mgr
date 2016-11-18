@@ -19,7 +19,6 @@
 
 extern char *optarg;
 extern int optind, opterr, optopt;
-
 extern void *BLEProcThread( UNUSED_ARG void *ptr );
 
 
@@ -114,7 +113,6 @@ static void ProcessCmdlineOptions(S32 argc, char *argv[])
                 break;
         }
     }
-
     if (err == TRUE)
     {
         Usage(gpBLEMgmtTaskCtx->programName);
@@ -122,6 +120,7 @@ static void ProcessCmdlineOptions(S32 argc, char *argv[])
     }
     return;
 }
+
 
  /*****************************************************************************
 * Name:TaskCtxInit

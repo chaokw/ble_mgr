@@ -121,7 +121,6 @@ static void ProcessCmdlineOptions(S32 argc, char *argv[])
     return;
 }
 
-
  /*****************************************************************************
 * Name:TaskCtxInit
 * Description:BLEMgmt task initialization routines.
@@ -272,7 +271,7 @@ static void localShutdown ( UNUSED_ARG int sig )
 * Output param:
 * Return-Value:
 * zero - for normal exit
-* non - zero for abnormal exit
+* non -zero for abnormal exit
 ******************************************************************************/
 S32 main(S32 argc, char *argv[])
 {
@@ -280,7 +279,6 @@ S32 main(S32 argc, char *argv[])
     pthread_t   BLEProcThreadCtx;
 
     /* Set up signal handlers for catching ctrl-c */
-#if 1
     signal(SIGTERM, localShutdown);
     signal(SIGQUIT, localShutdown);
     signal(SIGINT,  localShutdown);
@@ -288,7 +286,6 @@ S32 main(S32 argc, char *argv[])
     //signal(SIGSEGV, SegvHandler);     //chaokw
     /* to have a backtrace incase assert trigger a SIGABRT    glic  eglic support ? */	
     //signal(SIGABRT, SegvHandler);  
-#endif
 	
     /* Initialize the task control blocks */
     TaskCtxInit();

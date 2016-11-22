@@ -24,7 +24,6 @@
 /* --- project includes ---*/
 #include "ap_client.h"
 
-
 survey_table site[64];
 int survey_count = 0;
 static unsigned char timeout_indicate = 0;
@@ -69,7 +68,6 @@ static void next_field(char **line, char *output, int n) {
 		output[i] = '\0';
 	}
 }
-
 
 
 /***********************************************************************
@@ -223,7 +221,7 @@ int check_assoc(char *ifname)
 void assoc_timeout(union sigval v)
 {
        timeout_indicate = 1;
-       //printf("assoc_timeout function! %d\n", v.sival_int);
+       printf("assoc_timeout function! %d\n", v.sival_int);
 	   
 }
    
@@ -236,11 +234,11 @@ int assoc_loop(char *ifname, char *staname, char *essid, char *pass)
 	static int try_count = 0;
 	static int assoc_count = 0;
 
-       timer_t timerid;
-       struct sigevent evp;
-       struct itimerspec tick;
+	timer_t timerid;
+	struct sigevent evp;
+	struct itimerspec tick;
 	   
-       memset(&evp, 0, sizeof(struct sigevent));   
+	memset(&evp, 0, sizeof(struct sigevent));   
 
 	evp.sigev_value.sival_int = getpid(); 
 	evp.sigev_notify = SIGEV_THREAD;

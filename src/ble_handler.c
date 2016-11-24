@@ -172,7 +172,6 @@ BLEErrorT BLEProcMain(BLEMgmtTaskCtxT *BLEMgmt)
            }
 #endif
 
-
            if(FD_ISSET(gpBLEMgmtTaskCtx->uart.fd, &gpBLEMgmtTaskCtx->uart.mask)) {
              /* Get buffer */
              int i, j, n = read(gpBLEMgmtTaskCtx->uart.fd, buf, sizeof(buf));
@@ -219,11 +218,8 @@ BLEErrorT BLEProcMain(BLEMgmtTaskCtxT *BLEMgmt)
               }
               fflush(stdout);
               }
-
               /* received content  */  
               L1_receive_data(buf, n);
-
-			 
              }
     }
 

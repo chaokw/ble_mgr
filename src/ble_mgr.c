@@ -9,7 +9,6 @@
 #include <errno.h>
 #include <signal.h>
 #include <pthread.h>
-
 #include <sys/time.h>
 #include <time.h>
 
@@ -20,7 +19,6 @@
 extern char *optarg;
 extern int optind, opterr, optopt;
 extern void *BLEProcThread( UNUSED_ARG void *ptr );
-
 
 /*********************************************************
  * BLEMgmt Controller task context
@@ -320,7 +318,6 @@ S32 main(S32 argc, char *argv[])
         fprintf(pidFile, "%d", getpid());
         fclose(pidFile);
     }
-
     /* Start the message process thread for AP management */
     pthread_create( &BLEProcThreadCtx, NULL, BLEProcThread, NULL);
     		

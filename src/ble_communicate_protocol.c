@@ -32,11 +32,11 @@ uint16_t L1_sequence_id = 0;
 * used to store response package triggered while sending
 ****************************************************************************/
 static struct Response_Buff_Type_t g_ack_package_buffer =
-    {
+{
         0,0,0
-    };
-static L1_Send_Content * g_next_L1_send_content_buffer = NULL;
+};
 
+static L1_Send_Content * g_next_L1_send_content_buffer = NULL;
 
 /***************************************************************************
 * This variable is used to deal with : send header immediately after send response

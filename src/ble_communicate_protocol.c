@@ -113,8 +113,8 @@ static void delay_send_func(void * context)   // need a timer to start up (shoul
 
     current_task_type = TASK_NONE;
     next_task_type = TASK_NONE;
-
     content->isUsed = 0; 
+
     if(content->callback) {
         content->callback(SEND_FAIL);
     }
@@ -162,7 +162,6 @@ static uint32_t L1_resend_package(L1_Send_Content * content)
     L1_header_need_schedule.content = content;
 
     //schedule async send
-    
     //write(content,TASK_DATA);   //chaokw
     //write(gpBLEMgmtTaskCtx->uart.fd, content, content->length+8);	
     schedule_send(content,TASK_DATA);

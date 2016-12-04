@@ -17,7 +17,6 @@
 #include <linux/if.h>
 #include <linux/types.h>
 
-
 /* --- project includes ---*/
 #include "msgq.h"
 #include "dbgMsgq.h"
@@ -25,7 +24,6 @@
 #include "ble_handler.h"
 #include "ble_communicate_protocol.h"
 #include "ap_client.h"
-
 
 extern uint8_t global_reponse_buffer[GLOBAL_RESPONSE_BUFFER_SIZE];
 extern survey_table site[64];
@@ -84,7 +82,6 @@ static int get_address(char *iface_name, struct in_addr *ip)
     }
 
     close(sockfd);
-
     return -1;
 }
 
@@ -105,10 +102,10 @@ void return_device_id(void)
 	global_reponse_buffer[4] = 6;   /* MAC_LEN  = 6 */
 
 	ret = get_mac(mac_addr, "eth0");
-       if(ret < 0) {
+        if(ret < 0) {
                 printf("get eth0 mac error\n");
                 return;
-       }
+        }
 
 	memcpy(&global_reponse_buffer[5], mac_addr, 6);
 

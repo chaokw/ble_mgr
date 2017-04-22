@@ -8,10 +8,9 @@ CFLAGS +=-I$(RTDIR)/lib/libmsgq -g -rdynamic
 LDFLAGS +=-lpthread -lrt -L$(RTDIR)/lib/libmsgq -lmsgq
 
 all: $(EXEC)
-
 $(EXEC): $(OBJS)
 	$(CC) $(CFLAGS) $^ -o $@ $(LDFLAGS) 
-
+	
 %.o:%.c
 	$(CC) -c $< $(CFLAGS)
 

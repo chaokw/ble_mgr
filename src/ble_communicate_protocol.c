@@ -347,14 +347,14 @@ SEND_DATA_LABLE:
 
 
         printf("\r\n------------data to be send-----------\r\n");
-	 int i;
+	int i;
         for(i=0; i<sendLen; i++) {	
 	     printf("%x", currentSendPointer[i]);  //chaokw
         }
         printf("\r\n--------------------------------------\r\n");
 
 
-        if( sendLen <=120){   //chaokw
+        if( sendLen <=120 ){   //chaokw
             error_code = write(gpBLEMgmtTaskCtx->uart.fd, currentSendPointer, sendLen);
         }
 	 else{
@@ -511,7 +511,6 @@ uint32_t L1_send(L2_Send_Content * content)   //chaokw
     //write(gpBLEMgmtTaskCtx->uart.fd, &sendContent[i], content->length + 8);	
 
     return BLE_OK;
-
 }
 
 
@@ -543,10 +542,10 @@ static uint32_t L2_frame_resolve(uint8_t * data, uint16_t length,RECEIVE_STATE *
         case SET_AP_CLIENT_CMD_ID: 
             first_key = data[2];
             first_value_length = (((data[3]<< 8) |data[4]) & 0x1FF);
-	     printf("first_value_length = %d\n", first_value_length);
+	    printf("first_value_length = %d\n", first_value_length);
             char ssid[32] = {0};
-	     strncpy(ssid, (char *)&data[L2_FIRST_VALUE_POS], first_value_length);
-	     ssid[first_value_length] = '\0';
+	    strncpy(ssid, (char *)&data[L2_FIRST_VALUE_POS], first_value_length);
+	    ssid[first_value_length] = '\0';
             printf("parsed ssid is %s\n", ssid);
 
             second_key = 	data[L2_FIRST_VALUE_POS + first_value_length];

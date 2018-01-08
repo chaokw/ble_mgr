@@ -1,3 +1,4 @@
+
 EXEC = ble_mgr
 SRCS = $(wildcard *.c)
 OBJS = $(SRCS:.c = .o)

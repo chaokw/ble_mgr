@@ -48,5 +48,3 @@ define Package/ble_mgr/install
 endef
 
 $(eval $(call BuildPackage,ble_mgr))
-
-

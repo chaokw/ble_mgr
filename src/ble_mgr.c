@@ -77,10 +77,9 @@ static void ProcessCmdlineOptions(S32 argc, char *argv[])
                 break;
             case 'p':
                 strncpy(gpBLEMgmtTaskCtx->cfg.pidFile, optarg,
-                        sizeof(gpBLEMgmtTaskCtx->cfg.pidFile)-1);
+                sizeof(gpBLEMgmtTaskCtx->cfg.pidFile)-1);
                 gpBLEMgmtTaskCtx->cfg.pidFile[sizeof(gpBLEMgmtTaskCtx->cfg.pidFile)-1] = '/0';
                 break;
-
             case 'x':
                 gpBLEMgmtTaskCtx->uart.mode = MODE_HEX;
                 gpBLEMgmtTaskCtx->cfg.debug = ENABLE;

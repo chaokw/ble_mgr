@@ -1,6 +1,5 @@
 #ifndef	BLE_MGR_H
 #define	BLE_MGR_H
-
 #define UNUSED_ARG  __attribute__((unused))
 #include <termios.h>
 #include <unistd.h>

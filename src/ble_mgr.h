@@ -9,7 +9,6 @@
  *  Maximum Path File Name Size
  ***********************************************************/
 #define MAX_PATH_NAME 255
-
 #define BAUDRATE B115200
 #define MODEMDEVICE "/dev/ttyS0"
 #define TIMEFORMAT "%Y-%m-%d %H:%M:%S"

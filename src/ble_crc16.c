@@ -6,7 +6,6 @@ static inline uint16_t crc16_byte(uint16_t crc, const uint8_t data)
     return (crc >> 8) ^ crc16_table[(crc ^ data) & 0xff];
 }
 
-
 /** CRC table for the CRC-16. The poly is 0x8005 (x^16 + x^15 + x^2 + 1) */
 uint16_t const crc16_table[256] =
     {

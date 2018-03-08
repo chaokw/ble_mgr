@@ -4,6 +4,7 @@
 # This is free software, licensed under the GNU General Public License v2.
 # See /LICENSE for more information.
 #
+
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=ble_mgr
@@ -14,14 +15,14 @@ PKG_BUILD_DIR := $(BUILD_DIR)/$(PKG_NAME)
 include $(INCLUDE_DIR)/package.mk
 
 define Package/ble_mgr
-  SECTION:=tigercel
-  CATEGORY:=tigercel
-  TITLE:= ble interface to manage router
-  DEPENDS:= +libpthread +libsyslog +librt
+	SECTION:=tigercel
+	CATEGORY:=tigercel
+	TITLE:= ble interface to manage router
+	DEPENDS:= +libpthread +libsyslog +librt
 endef
 
 define Package/ble_mgr/description
- This package help to manage tigercel AP router via ble.
+	This package help to manage tigercel AP router via ble.
 endef
 
 define Build/Prepare

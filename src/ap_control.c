@@ -55,7 +55,6 @@ static int get_mac(char* mac, char *name)
     return 0;
 }
 
-
 /***********************************************************************
 * get ip address via ioctl
 ************************************************************************/
@@ -74,13 +73,11 @@ static int get_address(char *iface_name, struct in_addr *ip)
         perror("create socket error!\n");
         return -1;
     }
-
     if (ioctl(sockfd, SIOCGIFADDR, &ifr) == 0) {
         memcpy(ip, &addr->sin_addr, sizeof(addr->sin_addr));
         close(sockfd);
         return 0;
     }
-
     close(sockfd);
     return -1;
 }

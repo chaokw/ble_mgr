@@ -300,7 +300,7 @@ LABEL_SEND_ACK:
                 }
                 return;
 	     }else{
-		  current_task_type = TASK_NONE;
+		current_task_type = TASK_NONE;
                 next_task_type = TASK_NONE;
                 g_ack_package_buffer.isUsed= 0;
                 if((next_task_type == TASK_DATA) && (g_next_L1_send_content_buffer != NULL)) {

@@ -93,7 +93,6 @@ void wifi_site_survey(const char *ifname, char* essid, int print)
 	close(socket_id);
 	if (ret != 0)
 		goto out;
-
 	if (wrq.u.data.length < 1)
 		goto out;
 

@@ -184,7 +184,7 @@ void response_apclient_cmd(int result)
 	global_reponse_buffer[2] = KEY_STATUS;
 	global_reponse_buffer[3] = 0;
 	global_reponse_buffer[4] = 1;
-       global_reponse_buffer[5] = result;
+	global_reponse_buffer[5] = result;
 
 	sendContent.callback  = NULL;
 	sendContent.content  = global_reponse_buffer;
@@ -201,10 +201,6 @@ void response_apclient_cmd(int result)
 ************************************************************************/
 void set_wifi_para(uint8_t * data)
 {
-
-
-
 	printf("set wifi parameters like ssid/passwd\r\n");
-
 }
 

@@ -31,7 +31,6 @@ static unsigned char timeout_indicate = 0;
 #define RTPRIV_IOCTL_SET (SIOCIWFIRSTPRIV + 0x02)
 #define RTPRIV_IOCTL_GSITESURVEY (SIOCIWFIRSTPRIV + 0x0D)
 
-
 /***********************************************************************
 * redefine iwpriv func
 ************************************************************************/
@@ -120,7 +119,6 @@ void wifi_site_survey(const char *ifname, char* essid, int print)
 		}
 		survey_count++;
 	}
-
 	if (survey_count == 0 && !print)
 		printf("no results");
 out:
@@ -270,7 +268,6 @@ int assoc_loop(char *ifname, char *staname, char *essid, char *pass)
 
 		/*  if timer time out , just beak the loop and return error */
 		//printf("assoc_count=%d, try_count=%d", assoc_count, try_count);
-		
               if (timeout_indicate == 1){
 			//printf("associate timeout!\r\n");
                      break;
@@ -304,7 +301,6 @@ int assoc_loop(char *ifname, char *staname, char *essid, char *pass)
 		}
 		sleep(8);
 	}
-
 	printf("ap client associate time out\r\n");
 	return 1;
 }

@@ -60,7 +60,6 @@ static void next_field(char **line, char *output, int n) {
 
 	memcpy(output, *line, n);
 	*line = &l[n];
-
 	for (i = n - 1; i > 0; i--) {
 		if (output[i] != ' ')
 			break;
@@ -170,7 +169,6 @@ static void wifi_repeater_start(const char *ifname, const char *staname, const c
 	} else {
 		return;
 	}
-
 	if (enctype) {
 		if (strstr(crypto, "AES") || strstr(crypto, "TKIPAES"))
 			iwpriv(staname, "ApCliEncrypType", "AES");
@@ -184,11 +182,10 @@ static void wifi_repeater_start(const char *ifname, const char *staname, const c
        system("ubus call network.interface.lan down");
        system("ubus call network.interface.lan up");
 	
-	iwpriv(staname, "ApCliEnable", "1");
-
-	memset(buf, 0, 100);
-	snprintf(buf, lengthof(buf) - 1, "brctl addif br-lan '%s'", staname);
-	system(buf);	
+       iwpriv(staname, "ApCliEnable", "1");
+       memset(buf, 0, 100);
+       snprintf(buf, lengthof(buf) - 1, "brctl addif br-lan '%s'", staname);
+       system(buf);	
 }
 
 
